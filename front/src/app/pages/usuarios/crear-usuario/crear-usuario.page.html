@@ -1,0 +1,22 @@
+<!-- <form> -->
+<!-- <label for="nombre"></label> -->
+<!-- aquí usamos interpolación en la propiedad, esta forma NO es lo recomendable -->
+<!--<input id="nombre" type="text" value="{{ this.nombre }}" />-->
+<!-- <br /> -->
+
+<!--Cuando queremos bindear la propiedad siempre con property binding que sería este metodo:-->
+<!-- <input id="nombre" type="text" [value]="this.nombre" /> -->
+
+<!--TWO WAY DATABINGING (a diferencia de los dos anteriores) hay que importarlo en el componente FormsModule-->
+<!--Si en ngModel lo ponemos solo entee [] y no () sería ONE WAY DATA BIDING y el this.nombre al ser signal no lleva () porque acá queremos la referencia a la signal-->
+<!-- <input id="nombre" name="nombre" type="text" [(ngModel)]="this.nombre" /> -->
+<!-- como no es una propiedad, usamos interpolación-->
+<!-- como es una signal hay que ponerle el () al this.nombre porque acá quiero el valor real-->
+<!-- <p>valor de nombre en la clase: {{ this.nombre() }}</p> -->
+<!-- </form> -->
+
+<!--Esto al final lo hacemos en el componente usuarios.form.html-->
+
+<app-usuarios-form (guardarUsuario)="this.onGuardarUsuarios($event) " [usuario]="this.usuarioVacio">
+</app-usuarios-form>
+<p>{{mensaje()}}</p>

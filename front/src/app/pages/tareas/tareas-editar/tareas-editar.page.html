@@ -1,0 +1,6 @@
+<h2>Editar tarea</h2>
+@let tarea = this.tareaResource.value();
+@if (tarea) {
+<app-tareas [tarea]="tarea" (guardarTarea)="this.onGuardarTarea($event)"></app-tareas>
+}
+<p>{{ mensaje() }}</p>

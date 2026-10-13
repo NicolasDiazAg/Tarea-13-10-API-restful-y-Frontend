@@ -1,0 +1,67 @@
+/* Agrupa cada etiqueta y su input en una columna ordenada */
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+/* Estilo para las etiquetas de texto (Nombre, Apellido, Username) */
+.flex-column label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 6px;
+}
+
+/* Estilo para los campos de texto */
+.flex-column input[type='text'] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+}
+
+/* Efecto al hacer clic dentro del campo de texto */
+.flex-column input[type='text']:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.15);
+}
+
+/* Estilo para el botón de "Guardar" */
+input[type='submit'] {
+  background-color: #1a73e8;
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+input[type='submit']:hover {
+  background-color: #1557b0;
+}
+
+/* Estilo para el párrafo inferior donde se muestra el JSON */
+p {
+  margin-top: 20px;
+  background-color: #f8f9fa;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #495057;
+  word-wrap: break-word;
+}

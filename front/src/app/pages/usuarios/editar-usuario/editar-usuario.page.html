@@ -1,0 +1,5 @@
+@let usuario = this.usuarioResource.value();
+@if (usuario) {
+  <app-usuarios-form (guardarUsuario)="this.onGuardarUsuarios($event)" [usuario]="usuario">
+  </app-usuarios-form>
+}

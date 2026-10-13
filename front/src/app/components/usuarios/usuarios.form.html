@@ -1,0 +1,25 @@
+<form novalidate (submit)="this.submitForm($event)">
+  <div class="flex-column">
+    <label for="nombre">Nombre:</label>
+    <input id="nombre" type="text" [formField]="this.usuarioForm.nombre" />
+  </div>
+
+  <div class="flex-column">
+    <label for="apellido">Apellido:</label>
+    <!-- Corregido el id a "apellido" -->
+    <input id="apellido" type="text" [formField]="this.usuarioForm.apellido" />
+  </div>
+
+  <div class="flex-column">
+    <!-- Corregido el for y el id a "username" -->
+    <label for="username">Username:</label>
+    <input id="username" type="text" [formField]="this.usuarioForm.username" />
+  </div>
+
+  <!-- Nunca usamos el evento click para un botón de tipo submit -->
+  <input type="submit" value="Guardar" class="btn-submit" />
+</form>
+
+<p>
+  {{ this.usuarioForm().value() | json }}
+</p>

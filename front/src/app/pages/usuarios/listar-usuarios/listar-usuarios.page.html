@@ -1,0 +1,46 @@
+<div class="table-container">
+  <!-- Cabecera con título y botón de crear -->
+  <div class="table-header">
+    <h2>Lista de Usuarios</h2>
+  </div>
+
+  <!-- Contenedor responsivo para la tabla -->
+  <div class="table-responsive">
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Username</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (usuario of this.usuarios(); track usuario.id_usuario) {
+          <tr>
+            <td>{{ usuario.id_usuario }}</td>
+            <td>{{ usuario.nombre }}</td>
+            <td>{{ usuario.apellido }}</td>
+            <td>{{ usuario.username }}</td>
+            <td>
+              <div class="action-buttons">
+                <button class="btn-action edit" (click)="goToEditarUsuario(usuario.id_usuario)">
+                  Editar
+                </button>
+                <button class="btn-action delete" (click)="eliminarUsuario(usuario.id_usuario)">
+                  Eliminar
+                </button>
+              </div>
+            </td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="5" class="empty-message">No se encontraron usuarios registrados.</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
+<button class="btn-primary" (click)="goToCrearUsuario()">Crear Usuario</button>

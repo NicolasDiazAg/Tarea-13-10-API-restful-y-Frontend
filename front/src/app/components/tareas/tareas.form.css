@@ -1,0 +1,67 @@
+/* Agrupa cada etiqueta y su campo de texto en una columna */
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+/* Estilo para las etiquetas (Grupo, Título, Descripción, etc.) */
+.flex-column label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 6px;
+}
+
+/* Estilo moderno para los campos de texto */
+.flex-column input[type='text'] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Efecto visual cuando seleccionas un campo de texto */
+.flex-column input[type='text']:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.15);
+}
+
+/* Diseño del botón de Guardar */
+input[type='submit'] {
+  background-color: #1a73e8;
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  transition: background-color 0.2s ease;
+}
+
+/* Color del botón al pasar el cursor por encima */
+input[type='submit']:hover {
+  background-color: #1557b0;
+}
+
+/* Estilo estilo consola para el párrafo del JSON al final */
+p {
+  margin-top: 20px;
+  background-color: #f8f9fa;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #495057;
+  word-wrap: break-word;
+}

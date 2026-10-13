@@ -1,0 +1,59 @@
+<div class="table-container">
+  <!-- Cabecera con título y botón de crear -->
+  <div class="table-header">
+    <h2>Lista de Tareas</h2>
+  </div>
+
+  <!-- Contenedor responsivo para la tabla -->
+  <div class="table-responsive">
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>ID Tarea</th>
+          <th>ID Creador</th>
+          <th>Grupo</th>
+          <th>Titulo</th>
+          <th>Descripcion</th>
+          <th>Prioridad</th>
+          <th>Fecha creación</th>
+          <th>Fecha finalización</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (tarea of this.tareaResource.value(); track tarea.id_tarea) {
+          <tr>
+            <td>{{ tarea.id_tarea }}</td>
+            <td>{{ tarea.id_creador }}</td>
+            <td>{{ tarea.grupo }}</td>
+            <td>{{ tarea.titulo }}</td>
+            <td>{{ tarea.descripcion }}</td>
+            <td>{{ tarea.prioridad }}</td>
+            <td>{{ tarea.creada }}</td>
+            <td>{{ tarea.terminada }}</td>
+            <td>{{ tarea.estado }}</td>
+            <td>
+              <div class="action-buttons">
+                <button class="btn-action edit" (click)="goToEditarTarea(tarea.id_tarea)">
+                  Editar
+                </button>
+                <button class="btn-action info" (click)="finalizarTarea(tarea.id_tarea)">
+                  Finalizar
+                </button>
+                <button class="btn-action delete" (click)="eliminarTarea(tarea.id_tarea)">
+                  Eliminar
+                </button>
+              </div>
+            </td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="10" class="empty-message">No se encontraron tareas registradas.</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
+<button class="btn-primary" (click)="goToCrearTareas()">Crear Tarea</button>

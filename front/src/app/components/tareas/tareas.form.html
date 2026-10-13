@@ -1,0 +1,42 @@
+<form novalidate (submit)="this.submitForm($event)">
+  <div class="flex-column">
+    <label for="grupo">Grupo:</label>
+    <input id="grupo" type="text" [formField]="this.tareaForm.grupo" />
+  </div>
+
+  <div class="flex-column">
+    <label for="titulo">Titulo:</label>
+    <input id="titulo" type="text" [formField]="this.tareaForm.titulo" />
+  </div>
+
+  <div class="flex-column">
+    <label for="descripcion">Descripcion:</label>
+    <input id="descripcion" type="text" [formField]="this.tareaForm.descripcion" />
+  </div>
+
+  <div class="flex-column">
+    <label for="prioridad">Prioridad:</label>
+    <input id="prioridad" type="text" [formField]="this.tareaForm.prioridad" />
+  </div>
+
+  <div class="flex-column">
+    <label for="creada">Creada:</label>
+    <input id="creada" type="text" [formField]="this.tareaForm.creada" />
+  </div>
+
+  <div class="flex-column">
+    <label for="terminada">Terminada:</label>
+    <input id="terminada" type="text" [formField]="this.tareaForm.terminada" />
+  </div>
+
+  <div class="flex-column">
+    <label for="estado">Estado:</label>
+    <input id="estado" type="text" [formField]="this.tareaForm.estado" />
+  </div>
+
+  <input type="submit" value="Guardar Tarea" />
+</form>
+
+<p>
+  {{ this.tareaForm().value() | json }}
+</p>

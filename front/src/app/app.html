@@ -1,0 +1,24 @@
+<div id="app-layout">
+  <header id="app-header">
+    <h1>-Angular-</h1>
+  </header>
+  <div id="app-medio">
+    <aside id="app-sidebar">
+      <nav>
+        <ul>
+          <!--El router link permite que al dar click a alguno de estos elementos nos rediriga-->
+          <li><a href="/home">Home</a></li>
+          <li><a routerLink="/usuarios" ngClass=".algo">Listar usuarios</a></li>
+          <li><a routerLink="/tareas">Listar tareas</a></li>
+          <li><a routerLink="/logout">Salir</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main id="app-page">
+      <router-outlet />
+      <!-- Esto es lo único que se reemplaza según la pagina en la que estemos-->
+    </main>
+  </div>
+</div>
+<footer id="app-footer"><p>© 2026 - CUCU</p></footer>
